@@ -3,7 +3,6 @@ import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import MacBookPro from '../components/MacBookPro'
 import CanvasLoader from '../components/CanvasLoader'
-import { Leva, useControls } from 'leva'
 import Iphone16 from '../components/Iphone16'
 import { useMediaQuery } from 'react-responsive'
 import { calculateSizes } from '../constants'
@@ -18,43 +17,43 @@ const Hero = () => {
 
     const sizes = calculateSizes(isSmall, isMobile, isTablet)
 
-    const controls  = useControls('MacBookPro', {
-        positionX: {
-            value: 2.5,
-            min: -10,
-            max:10,
-        },
-        positionY: {
-            value: 2.5,
-            min: -10,
-            max:10,
-        },
-        positionZ: {
-            value: 2.5,
-            min: -10,
-            max:10,
-        }, 
-        rotationX: {
-            value: 0,
-            min: -10,
-            max:10,
-        },
-        rotationY: {
-            value: 0,
-            min: -10,
-            max:10,
-        },
-        rotationZ: {
-            value: 0,
-            min: -10,
-            max:10,
-        },
-        scale: {
-            value: 1,
-            min: 0.1,
-            max: 6,
-        }
-    })
+    // const controls  = useControls('MacBookPro', {
+    //     positionX: {
+    //         value: 2.5,
+    //         min: -10,
+    //         max:10,
+    //     },
+    //     positionY: {
+    //         value: 2.5,
+    //         min: -10,
+    //         max:10,
+    //     },
+    //     positionZ: {
+    //         value: 2.5,
+    //         min: -10,
+    //         max:10,
+    //     }, 
+    //     rotationX: {
+    //         value: 0,
+    //         min: -10,
+    //         max:10,
+    //     },
+    //     rotationY: {
+    //         value: 0,
+    //         min: -10,
+    //         max:10,
+    //     },
+    //     rotationZ: {
+    //         value: 0,
+    //         min: -10,
+    //         max:10,
+    //     },
+    //     scale: {
+    //         value: 1,
+    //         min: 0.1,
+    //         max: 50,
+    //     }
+    // })
 
   return (
     <section className='min-h-screen w-full flex flex-col relative'>
@@ -64,27 +63,27 @@ const Hero = () => {
         </div>
 
         <div className='w-full h-full absolute inset-0 '>
-            <Leva />
+            {/* <Leva /> */}
             <Canvas className='w-full h-full'>
                 <Suspense fallback={<CanvasLoader />}>
 
-                    <PerspectiveCamera makeDefault position={[0, 0, 20]} />
+                    <PerspectiveCamera makeDefault position={[0, 0, 25]} />
 
                     <group>
                         <MacBookPro 
-                            scale={isMobile ? 0.2 : 0.38} 
-                            position={[-6.9, -8.1, -8.7]} 
+                            scale={sizes.macbookScale} 
+                            position={sizes.macbookPosition} 
                             rotation={[0.4, 0.8, -0.2]}/>
 
                         <Iphone16 
-                            scale={isMobile ? 0.4 : 0.52} 
-                            position={[5.1, -2.7, -8.7]} 
+                            scale={sizes.iphoneScale} 
+                            position={sizes.iphonePosition} 
                             rotation={[-0.4, -0.4, -0.4]}/>
 
                         <VisionPro
-                            scale={isMobile ? 4 : 4.24} 
-                            position={[10, -9.1, 0.7]} 
-                            rotation={[-6.2, -0.6, 0.0]} />
+                            scale={sizes.visionProScale} 
+                            position={sizes.visionProPosition} 
+                            rotation={[-4.2, 0.0, -3.4]} />
 
                     </group>
                     
