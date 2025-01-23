@@ -7,7 +7,7 @@ Title: macbook pro M3 16 inch 2024
 */
 
 import * as THREE from 'three'
-import { useGLTF } from '@react-three/drei'
+import { Float, useGLTF, useTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
@@ -120,15 +120,17 @@ type GLTFResult = GLTF & {
 
 export function MacBookPro(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/macbook_pro_m3_16_inch_2024.glb') as GLTFResult
+
+  const screenTexture = useTexture('public/textures/macbook/githibprof.jpg')
   return (
-    <group {...props} dispose={null}>
+    <Float {...props} dispose={null} floatIntensity={0}>
       <group rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_10.geometry}
-          material={materials.AibnXCKcAbewWhH}
-        />
+          material={materials.AibnXCKcAbewWhH}>
+        </mesh>
         <mesh
           castShadow
           receiveShadow
@@ -464,7 +466,9 @@ export function MacBookPro(props: JSX.IntrinsicElements['group']) {
           receiveShadow
           geometry={nodes.Object_123.geometry}
           material={materials.sfCQkHOWyrsLmor}
-        />
+        >
+          <meshMatcapMaterial map={screenTexture} />
+        </mesh>
         <mesh
           castShadow
           receiveShadow
@@ -490,7 +494,7 @@ export function MacBookPro(props: JSX.IntrinsicElements['group']) {
           material={materials.MycfwscjQZRVSoj}
         />
       </group>
-    </group>
+    </Float>
   )
 }
 

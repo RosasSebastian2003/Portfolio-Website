@@ -1,11 +1,61 @@
 import { PerspectiveCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import MacBookPro from '../components/MacBookPro'
 import CanvasLoader from '../components/CanvasLoader'
+import { Leva, useControls } from 'leva'
+import Iphone16 from '../components/Iphone16'
+import { useMediaQuery } from 'react-responsive'
+import { calculateSizes } from '../constants'
+import VisionPro from '../components/VisionPro'
+
 
 
 const Hero = () => {
+    const isSmall = useMediaQuery({maxWidth: 440})
+    const isMobile = useMediaQuery({maxWidth: 768})
+    const isTablet = useMediaQuery({minWidth: 768, maxWidth: 1024})
+
+    const sizes = calculateSizes(isSmall, isMobile, isTablet)
+
+    const controls  = useControls('MacBookPro', {
+        positionX: {
+            value: 2.5,
+            min: -10,
+            max:10,
+        },
+        positionY: {
+            value: 2.5,
+            min: -10,
+            max:10,
+        },
+        positionZ: {
+            value: 2.5,
+            min: -10,
+            max:10,
+        }, 
+        rotationX: {
+            value: 0,
+            min: -10,
+            max:10,
+        },
+        rotationY: {
+            value: 0,
+            min: -10,
+            max:10,
+        },
+        rotationZ: {
+            value: 0,
+            min: -10,
+            max:10,
+        },
+        scale: {
+            value: 1,
+            min: 0.1,
+            max: 6,
+        }
+    })
+
   return (
     <section className='min-h-screen w-full flex flex-col relative'>
         <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3'>
@@ -14,12 +64,30 @@ const Hero = () => {
         </div>
 
         <div className='w-full h-full absolute inset-0 '>
+            <Leva />
             <Canvas className='w-full h-full'>
                 <Suspense fallback={<CanvasLoader />}>
 
-                    <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+                    <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
-                    <MacBookPro scale={0.3} position={[0,-8,0]} rotation={[0.3, 0 / 5,0]}/>
+                    <group>
+                        <MacBookPro 
+                            scale={isMobile ? 0.2 : 0.38} 
+                            position={[-6.9, -8.1, -8.7]} 
+                            rotation={[0.4, 0.8, -0.2]}/>
+
+                        <Iphone16 
+                            scale={isMobile ? 0.4 : 0.52} 
+                            position={[5.1, -2.7, -8.7]} 
+                            rotation={[-0.4, -0.4, -0.4]}/>
+
+                        <VisionPro
+                            scale={isMobile ? 4 : 4.24} 
+                            position={[10, -9.1, 0.7]} 
+                            rotation={[-6.2, -0.6, 0.0]} />
+
+                    </group>
+                    
 
                     <ambientLight intensity={0.6} />
                     <directionalLight position={[10, 10, 3]} intensity={0.8} />
