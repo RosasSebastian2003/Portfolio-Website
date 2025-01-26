@@ -7,6 +7,7 @@ import Iphone16 from '../components/Iphone16'
 import { useMediaQuery } from 'react-responsive'
 import { calculateSizes } from '../constants'
 import VisionPro from '../components/VisionPro'
+import { Button } from '../components/Button'
 
 
 
@@ -64,7 +65,7 @@ const Hero = () => {
 
         <div className='w-full h-full absolute inset-0 '>
             {/* <Leva /> */}
-            <Canvas className='w-full h-full'>
+            <Canvas className='w-full h-full pt-10 pb-10'>
                 <Suspense fallback={<CanvasLoader />}>
 
                     <PerspectiveCamera makeDefault position={[0, 0, 25]} />
@@ -92,6 +93,12 @@ const Hero = () => {
                     <directionalLight position={[10, 10, 3]} intensity={0.8} />
                 </Suspense>
             </Canvas>
+        </div>
+
+        <div className='absolute bottom-7 left-0 right-0 w-full z-10 c-space'>
+            <a href="#contact" className='w-fit'>
+                <Button name="Let's work together!" isBeam containerClass='sm:w-fit w-full sm:m-w-96' />
+            </a>
         </div>
     </section>
   )
