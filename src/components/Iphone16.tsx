@@ -7,7 +7,7 @@ Title: Iphone 16 Plus
 */
 
 import * as THREE from 'three'
-import { Float, useGLTF } from '@react-three/drei'
+import { Float, useGLTF, useTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
@@ -48,18 +48,21 @@ type GLTFResult = GLTF & {
 export function Iphone16(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/iphone_16_plus.glb') as GLTFResult
 
-  // const screenTexture = useTexture('public/textures/iphone16/linkedin.jpeg')
+  const screenTexture = useTexture('public/textures/iphone16/linkedin.jpeg')
+  screenTexture.repeat.set(3,6.7)
+  screenTexture.offset.set(-0.55,-3 )
+  screenTexture.flipY = false
   return (
     <Float {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[0, 0, 0.17]} rotation={[-Math.PI / 2, 0, 0]} scale={0.1}>
-            <mesh
+            {/* <mesh
               castShadow
               receiveShadow
               geometry={nodes.defaultMaterial.geometry}
               material={materials.Screen_Glass}
-            />
+            /> */}
             <mesh
               castShadow
               receiveShadow
@@ -119,13 +122,9 @@ export function Iphone16(props: JSX.IntrinsicElements['group']) {
               receiveShadow
               geometry={nodes.defaultMaterial_10.geometry}
               material={materials.Flash_Glass_002}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.defaultMaterial_11.geometry}
-              material={materials.Flash_002}
-            />
+            >
+            </mesh>
+
             <mesh
               castShadow
               receiveShadow
@@ -133,6 +132,7 @@ export function Iphone16(props: JSX.IntrinsicElements['group']) {
               material={materials.Screen_BG}
             >
 
+              <meshMatcapMaterial map={screenTexture} />
             </mesh>
             <mesh
               castShadow
