@@ -76,7 +76,7 @@ const Hero = () => {
     // })
 
   return (
-    <section className='min-h-screen w-full flex flex-col relative'>
+    <section className='min-h-screen w-full flex flex-col relative' id='home'>
         {/* Sparkles Background */}
         <div className='w-full h-full absolute inset-0'>
             <SparklesCore

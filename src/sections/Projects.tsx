@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import { Suspense, useState } from 'react'
 import { myProjects } from '../constants'
 import { Canvas } from '@react-three/fiber'
 import { Center, OrbitControls } from '@react-three/drei'
@@ -76,7 +76,15 @@ const Projects = () => {
                             </group>
                         </Suspense>
                     </Center>
-                    <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={true} />
+                    <OrbitControls
+                        maxPolarAngle={Math.PI / 2}
+                        minPolarAngle={0}
+                        enableZoom={true}
+                        minDistance={5}
+                        maxDistance={30}
+                        minAzimuthAngle={-Math.PI / 4}
+                        maxAzimuthAngle={Math.PI / 4}
+                    />
                 </Canvas>
             </div>
         </div>
