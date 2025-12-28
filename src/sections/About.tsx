@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Globe from 'react-globe.gl'
 import { Button } from '../components/Button'
 import { RadialIntro } from '@/components/animate-ui/components/community/radial-intro'
+import { RoundedSquareBackground } from '@/components/animate-ui/components/backgrounds/hexagon'
 
 const About = () => {
     const [hasCopied, setHasCopied] = useState(false)
@@ -73,7 +74,7 @@ const About = () => {
 
             <div className='xl:col-span-2 xl:row-span-3'>
                 <div className='grid-container'>
-                    <img src="/assets/grid3.png" alt="grid-3" className='w-full sm:h-[266] h-fit object-contain' />
+                    <RoundedSquareBackground />
                     <div>
                         <p className='grid-headtext'>My passion for coding</p>
                         <p className='grid-subtext'>I like solving problems and building things through code</p>
