@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import Window from '../components/UI/Window'
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null)
@@ -44,7 +45,9 @@ const Contact = () => {
   return (
     <section className='c-space my-20'>
       <div className='relative min-h-screen flex items-center justify-center flex-col'>
-        <img src='/assets/terminal.png' alt='terminal background' className='absolute inset-0 min-h-screen' />
+        <div className='absolute inset-0 min-h-screen'>
+          <Window />
+        </div>
         <div className='contact-container'>
           <h3 className='head-text'>Let's talk</h3>
           <p className='x-lg text-white-600 mt-3'>Wether you are looking to build a new website, improve your existing platform, or bring a unique project to life, I'm here to help!</p>
