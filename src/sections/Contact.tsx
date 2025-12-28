@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {
-  const formRef = useRef()
+  const formRef = useRef<HTMLFormElement>(null)
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -10,11 +10,11 @@ const Contact = () => {
   })
   const [loading, setLoading] = useState(false)
 
-  const handleChange = ({ target: { name, value }}) => {
+  const handleChange = ({ target: { name, value }}: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({... form, [name]: value})
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true)
 
