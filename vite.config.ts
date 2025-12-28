@@ -13,4 +13,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  preview: {
+    host: '0.0.0.0',
+    port: 3000,
+    allowedHosts: ['portfolio.rosassebastian.com'],
+  },
 })
