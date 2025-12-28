@@ -8,6 +8,9 @@ import { useMediaQuery } from 'react-responsive'
 import { calculateSizes } from '../constants'
 import VisionPro from '../components/VisionPro'
 import { Button } from '../components/Button'
+import { SparklesCore } from '@/components/UI/sparkles'
+import ColourfulText from '@/components/UI/colourful-text'
+import { TypewriterEffect } from '@/components/UI/typewriter-effect'
 
 
 
@@ -17,6 +20,22 @@ const Hero = () => {
     const isTablet = useMediaQuery({minWidth: 768, maxWidth: 1024})
 
     const sizes = calculateSizes(isSmall, isMobile, isTablet)
+
+    const words = [
+        {
+            text: "Lets",
+        },
+        {
+            text: "build",
+        },
+        {
+            text: "something",
+        },
+        {
+            text: "together.",
+            className: "text-blue-500 dark:text-blue-500",
+        },
+    ];
 
     // const controls  = useControls('MacBookPro', {
     //     positionX: {
@@ -58,12 +77,27 @@ const Hero = () => {
 
   return (
     <section className='min-h-screen w-full flex flex-col relative'>
-        <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3'>
-            <p className='sm:text-3xl text-2xl font-medium text-white text-center font-generalsans'>Hi, I am Sebastian <span className='waving-hand'>👋🏻</span></p>
-            <p className='hero_tag text-gray_gradient'>Building Products & Brands</p>
+        {/* Sparkles Background */}
+        <div className='w-full h-full absolute inset-0'>
+            <SparklesCore
+                id="tsparticlesfullpage"
+                background="transparent"
+                minSize={0.6}
+                maxSize={1.4}
+                particleDensity={100}
+                className="w-full h-full"
+                particleColor="#FFFFFF"
+            />
         </div>
 
-        <div className='w-full h-full absolute inset-0 '>
+        <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative z-10'>
+            <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold text-center text-white relative z-2 font-sans">
+            Hello!, my name is <ColourfulText text="Sebastian" /> <br /> 
+            <TypewriterEffect words={words} className='mt-10'/>
+      </h1>
+        </div>
+
+        <div className='w-full h-full absolute inset-0'>
             {/* <Leva /> */}
             <Canvas className='w-full h-full pt-10 pb-10'>
                 <Suspense fallback={<CanvasLoader />}>
@@ -97,7 +131,7 @@ const Hero = () => {
 
         <div className='absolute bottom-7 left-0 right-0 w-full z-10 c-space'>
             <a href="#about" className='w-fit'>
-                <Button name="Let's work together!" isBeam containerClass='sm:w-fit w-full sm:m-w-96' />
+                <Button name="Hit me up!" isBeam containerClass='sm:w-fit w-full sm:m-w-96' />
             </a>
         </div>
     </section>

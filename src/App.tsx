@@ -9,15 +9,19 @@ import Experience from './sections/Experience'
 
 const App = () => {
   return (
-    <main className='max-w-7xl mx-auto'>
-      <NavBar />
+    <main>
+      <div className='max-w-7xl mx-auto'>
+        <NavBar />
+      </div>
       <Hero />
-      <About />
-      <Projects />
-      <Clients />
-      <Experience />
-      <Contact />
-      <Footer />
+      <div className='max-w-7xl mx-auto'>
+        <About />
+        <Projects />
+        <Clients />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   )
 }
