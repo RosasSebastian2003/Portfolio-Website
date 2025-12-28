@@ -121,7 +121,7 @@ type GLTFResult = GLTF & {
 export function MacBookPro(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/macbook_pro_m3_16_inch_2024.glb') as GLTFResult
 
-  const screenTexture = useTexture('public/textures/macbook/githibprof.jpg')
+  const screenTexture = useTexture('/textures/macbook/githibprof.jpg')
   return (
     <Float {...props} dispose={null} floatIntensity={0}>
       <group rotation={[Math.PI / 2, 0, 0]}>

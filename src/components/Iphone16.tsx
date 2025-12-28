@@ -48,7 +48,7 @@ type GLTFResult = GLTF & {
 export function Iphone16(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/iphone_16_plus.glb') as GLTFResult
 
-  const screenTexture = useTexture('public/textures/iphone16/linkedin.jpeg')
+  const screenTexture = useTexture('/textures/iphone16/linkedin.jpeg')
   screenTexture.repeat.set(3,6.7)
   screenTexture.offset.set(-0.55,-3 )
   screenTexture.flipY = false

@@ -192,7 +192,7 @@ type GLTFResult = GLTF & {
 }
 
 export function VisionPro(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('public/models/apple_vision_pro.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/models/apple_vision_pro.glb') as GLTFResult
   return (
     <Float {...props} dispose={null} floatIntensity={0.5}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -917,6 +917,6 @@ export function VisionPro(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('public/models/apple_vision_pro.glb')
+useGLTF.preload('/models/apple_vision_pro.glb')
 
 export default VisionPro
