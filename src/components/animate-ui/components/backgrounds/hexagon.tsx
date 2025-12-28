@@ -61,7 +61,7 @@ function RoundedSquareBackground({
       ref={containerRef}
       data-slot="rounded-square-background"
       className={cn(
-        'relative size-full overflow-hidden dark:bg-neutral-900 bg-neutral-100 flex items-center justify-center',
+        'relative size-full overflow-hidden bg-black-200 flex items-center justify-center',
         className,
       )}
       {...props}
@@ -88,14 +88,14 @@ function RoundedSquareBackground({
                   ...squareProps?.style,
                 }}
                 className={cn(
-                  'relative flex items-center justify-center',
-                  "before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full dark:before:bg-neutral-950 before:bg-white before:opacity-100 before:transition-all before:duration-1000 before:rounded-[var(--border-radius)]",
-                  "after:content-[''] after:absolute after:inset-[var(--square-margin)] dark:after:bg-neutral-950 after:bg-white after:rounded-[calc(var(--border-radius)-var(--square-margin))]",
-                  'hover:before:bg-neutral-200 dark:hover:before:bg-neutral-800 hover:before:opacity-100 hover:before:duration-0 dark:hover:after:bg-neutral-900 hover:after:bg-neutral-100 hover:after:opacity-100 hover:after:duration-0',
+                  'group relative flex items-center justify-center',
+                  "before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-neutral-950 before:opacity-100 before:transition-all before:duration-1000 before:rounded-[var(--border-radius)]",
+                  "after:content-[''] after:absolute after:inset-[var(--square-margin)] after:bg-neutral-950 after:rounded-[calc(var(--border-radius)-var(--square-margin))]",
+                  "hover:before:bg-neutral-800 hover:before:opacity-100 hover:before:duration-0 hover:after:bg-neutral-900 hover:after:opacity-100 hover:after:duration-0",
                   squareProps?.className,
                 )}
               >
-                <span className="relative z-10 text-neutral-400 dark:text-neutral-500 font-semibold select-none" style={{ fontSize: dimensions.squareWidth * 0.4 }}>
+                <span className="relative z-10 text-neutral-500 group-hover:text-white transition-colors duration-200 font-semibold select-none" style={{ fontSize: dimensions.squareWidth * 0.4 }}>
                   {letter}
                 </span>
               </div>
