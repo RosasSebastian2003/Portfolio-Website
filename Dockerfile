@@ -1,14 +1,16 @@
-# Stage 1: Build
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /app
 
+# Install dependencies for node-gyp (needed for some native modules)
+RUN apk add --no-cache python3 make g++
+
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies with clean install
+RUN npm ci --legacy-peer-deps
 
 # Copy source code
 COPY . .
@@ -16,17 +18,8 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Stage 2: Production
-FROM nginx:alpine AS production
+# Expose port (Coolify will handle the serving)
+EXPOSE 3000
 
-# Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Copy nginx configuration (optional, we'll create a custom one)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Serve with vite preview
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "3000"]
