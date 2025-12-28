@@ -92,7 +92,7 @@ const Hero = () => {
 
         <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative z-10'>
             <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold text-center text-white relative z-2 font-sans">
-            Hello!, my name is <ColourfulText text="Sebastian" /> <br /> 
+            Hello!, my name is <ColourfulText text="Sebastian Rosas Maciel" /> <br /> 
             <TypewriterEffect words={words} className='mt-10'/>
       </h1>
         </div>

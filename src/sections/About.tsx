@@ -35,7 +35,7 @@ const About = () => {
                     <img src="assets/memoji.png" alt="grid-1" className='w-full sm:h-[276px] h-fit object-contain' />
                     <div>
                         <p className='grid-headtext'>I'm Sebastian, nice to meet you!</p>
-                        <p className='grid-subtext'>I'm currently pusrruing my 7th semester of the computer science bachelors degree at Instituto Tecnologico y de Estudios Superiores de Monterrey</p>
+                        <p className='grid-subtext'>I am a Software Engineer with hands-on experience building production-grade applications across iOS, web, and mixed reality platforms. I enjoy working on complex systems that combine clean architecture, modern UI, and intelligent automation.</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ const About = () => {
                     <RadialIntro orbitItems={orbitItems}/>
                     <div>
                         <p className='grid-headtext'>Tech Stack</p>
-                        <p className='grid-subtext'>I spetialice in SwiftUI</p>
+                        <p className='grid-subtext'>My technical stack includes Swift, SwiftUI, VisionOS, RealityKit, TypeScript, Python, React, FastAPI, and Docker. I have strong experience working with LLM-based systems, RAG pipelines, distributed systems, cloud services, and agent-based architectures using Azure OpenAI and MCP.</p>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ const About = () => {
                     </div>
                     <div>
                         <p className='grid-headtext'>I work remotely across timezones</p>
-                        <p className='grid-subtext'>I'm based in Mexico with remote work available</p>
+                        <p className='grid-subtext'>I am fully comfortable working remotely and collaborating with distributed teams. I have experience communicating across time zones, managing tasks independently, and delivering high-quality results in remote-first environments.</p>
                         <Button name="Contact me" isBeam containerClass={'w-full mt-10'} />
                     </div>
                 </div>
@@ -77,7 +77,7 @@ const About = () => {
                     <RoundedSquareBackground />
                     <div>
                         <p className='grid-headtext'>My passion for coding</p>
-                        <p className='grid-subtext'>I like solving problems and building things through code</p>
+                        <p className='grid-subtext'>I am deeply passionate about programming and continuously learning new technologies. I enjoy exploring emerging platforms such as mixed reality, AI agents, and system design, and I actively apply new concepts by building real-world projects and tools.</p>
                     </div>
                 </div>
             </div>
