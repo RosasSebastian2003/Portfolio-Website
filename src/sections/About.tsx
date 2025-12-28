@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Globe from 'react-globe.gl'
 import { Button } from '../components/Button'
+import { RadialIntro } from '@/components/animate-ui/components/community/radial-intro'
 
 const About = () => {
     const [hasCopied, setHasCopied] = useState(false)
@@ -13,6 +14,18 @@ const About = () => {
             setHasCopied(false)
         }, 2000)
     }
+
+    const orbitItems = [
+        { id: 0, name: "Swift",src: "/assets/icons/swift.png" },
+        { id: 1, name: "Firebase",src: "/assets/icons/firebase.png" },
+        { id: 2, name: "Typescript",src: "/assets/icons/typescript.png" },
+        { id: 3, name: "Next.js",src: "/assets/icons/next.png" },
+        { id: 4, name: "Nest.js",src: "/assets/icons/nest.png" },
+        { id: 5, name: "Tailwind",src: "/assets/icons/tailwind.png" },
+        { id: 6, name: "PostgreSQL",src: "/assets/icons/postgress.png" },
+        { id: 7, name: "Python",src: "/assets/icons/python.png" },
+    ]
+
   return (
     <section className='c-space my-20' id='about'>
         <div className='grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full'>
@@ -28,7 +41,7 @@ const About = () => {
 
             <div className='col-span-1 xl:row-span-3'>
                 <div className='grid-container'>
-                    <img src="assets/grid2.png" alt="grid-2" className='w-full sm:w-[276px] h-fit object-contain' />
+                    <RadialIntro orbitItems={orbitItems}/>
                     <div>
                         <p className='grid-headtext'>Tech Stack</p>
                         <p className='grid-subtext'>I spetialice in SwiftUI</p>

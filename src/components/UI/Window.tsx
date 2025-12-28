@@ -1,4 +1,3 @@
-import React from 'react'
 import WindowHeader from './WindowHeader'
 import { GravityStarsBackground } from '@/components/animate-ui/components/backgrounds/gravity-stars';
 
