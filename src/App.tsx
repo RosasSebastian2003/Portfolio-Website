@@ -1,5 +1,5 @@
 import About from './sections/About'
-import Clients from './sections/Clients'
+// import Clients from './sections/Clients'
 import Contact from './sections/Contact'
 import Hero from './sections/Hero'
 import NavBar from './sections/NavBar'
@@ -17,7 +17,7 @@ const App = () => {
       <div className='max-w-7xl mx-auto'>
         <About />
         <Projects />
-        <Clients />
+        {/* <Clients /> */}
         <Experience />
         <Contact />
         <Footer />
