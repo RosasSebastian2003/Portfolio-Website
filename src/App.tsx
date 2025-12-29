@@ -6,8 +6,11 @@ import NavBar from './sections/NavBar'
 import Projects from './sections/Projects'
 import Footer from './sections/Footer'
 import Experience from './sections/Experience'
+import { usePreloadModels } from './hooks/usePreloadModels'
 
 const App = () => {
+  usePreloadModels()
+  
   return (
     <main>
       <div className='max-w-7xl mx-auto'>
