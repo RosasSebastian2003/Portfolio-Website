@@ -117,11 +117,11 @@ body {
   }
 
   .work-content_logo {
-    @apply rounded-3xl w-16 h-16 p-2 bg-black-600;
+    @apply rounded-3xl w-16 h-16 p-2 bg-white-700;
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full bg-white-500 group-hover:bg-black-500 group-last:hidden;
   }
 
   /* contact section */

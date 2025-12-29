@@ -160,5 +160,31 @@ export const workExperiences = [
     icon: '/assets/logos/enviaflores.png',
     animation: 'clapping',
   },
-
+  {
+    id: 3,
+    name: 'Tec Salud - Apprenticeship Program',
+    pos: 'iOS App Developer',
+    duration: '2024',
+    title: "Working with a team to develop a machine learning powered step by step surgery app for VisionOS to help medicine students to have a better reference before making incisions in patients.",
+    icon: '/assets/logos/tec.svg',
+    animation: 'clapping',
+  },
+  {
+    id: 4,
+    name: 'Metaphorce',
+    pos: 'Backend Instructor at Carreer Booster',
+    duration: '2023 - 2024',
+    title: "Taught backend development concepts to students and working professionals in a career booster program, focusing on server-side programming and API design using Spring Boot.",
+    icon: '/assets/logos/metaphorce.png',
+    animation: 'clapping',
+  },
+   {
+    id: 5,
+    name: 'Sorteos Tec - Apprenticeship Program',
+    pos: 'Fullstack Developer',
+    duration: '2023',
+    title: "Worked alongside with a team to develop a web app using ASP.NET 6 wich had a Unity Game embedded which served as a loyalty program for sorteos Tec's clients.",
+    icon: '/assets/logos/sorteosTec.webp',
+    animation: 'clapping',
+  },
 ];
