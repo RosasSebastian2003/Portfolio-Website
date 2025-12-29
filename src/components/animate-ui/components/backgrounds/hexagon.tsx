@@ -39,8 +39,11 @@ function RoundedSquareBackground({
     const containerHeight = containerRef.current.offsetHeight;
 
     // Calcular el tamaño del cuadrado basado en el contenedor
-    // Usamos un factor de zoom más agresivo que permite que algunos cuadrados queden fuera
-    const calculatedSize = Math.max(containerWidth / 8, containerHeight / 2.5);
+    // En pantallas pequeñas usamos el ancho, en grandes usamos la altura
+    const isMobile = containerWidth < 768;
+    const calculatedSize = isMobile
+      ? containerWidth / 5  // Para móviles: 5 cuadrados por fila
+      : Math.max(containerWidth / 12, containerHeight / 4);  // Para desktop
 
     setDimensions({
       squareWidth: calculatedSize,
