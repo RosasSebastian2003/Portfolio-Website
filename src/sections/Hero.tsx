@@ -32,8 +32,11 @@ const Hero = () => {
             text: "something",
         },
         {
-            text: "together.",
-            className: "text-blue-500 dark:text-blue-500",
+            text: "together",
+            className: "text-[rgb(3,61,252)] dark:text-[rgb(3,61,252)]",
+        },
+        {
+            text: ".",
         },
     ];
 
@@ -92,7 +95,7 @@ const Hero = () => {
 
         <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative z-10'>
             <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold text-center text-white relative z-2 font-sans">
-            Hello!, my name is <ColourfulText text="Sebastian Rosas Maciel" /> <br /> 
+            Hello!, my name is <ColourfulText text="Sebastian" /> <br /> 
             <TypewriterEffect words={words} className='mt-10'/>
       </h1>
         </div>
@@ -130,8 +133,8 @@ const Hero = () => {
         </div>
 
         <div className='absolute bottom-7 left-0 right-0 w-full z-10 c-space'>
-            <a href="#about" className='w-fit'>
-                <Button name="Hit me up!" isBeam containerClass='sm:w-fit w-full sm:m-w-96' />
+            <a href="#" className='w-fit'>
+                <Button name="Lets work together!" isBeam containerClass='sm:w-fit w-full sm:m-w-96' />
             </a>
         </div>
     </section>

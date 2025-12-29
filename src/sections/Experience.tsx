@@ -6,10 +6,11 @@ const Experience = () => {
         <div className='w-full text-white-600'>
             <h3 className='head-text' id='work'>My Work Experience</h3>
 
-            <div className='work-container'>
-                <div className='work-canvas'>
+            {/* <div className='work-container'> */}
+            <div className='mt-12'>
+                {/* <div className='work-canvas'>
 
-                </div>
+                </div> */}
 
                 <div className='work-content'>
                     <div className='sm:py-10 py-5 sm:px-5 px-2.5'>
